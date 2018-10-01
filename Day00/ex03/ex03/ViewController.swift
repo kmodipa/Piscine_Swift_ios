@@ -16,7 +16,15 @@ class ViewController: UIViewController {
     /* The number keypad in one function */
     @IBAction func numbers(_ sender: UIButton)
     {
-        display.text = display.text! + String(sender.tag-1)
+        if display.text == "0"
+        {
+            display.text = ""
+            display.text = display.text! + String(sender.tag-1)
+        }
+        else
+        {
+            display.text = display.text! + String(sender.tag-1)
+        }
         numberOnScreen = Double(display.text!)!
     }
     
@@ -31,7 +39,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() { 
+    override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
