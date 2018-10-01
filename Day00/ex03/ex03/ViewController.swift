@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var mathOperation = false;
     var operation = 0;
     var result:Double = 0;
+    var mathSign:Double = -1;
     @IBOutlet weak var display: UILabel!
     
     /* The number keypad in one function */
@@ -44,7 +45,7 @@ class ViewController: UIViewController {
     /* The function keypad in one function */
     @IBAction func functionButtons(_ sender: UIButton)
     {
-        if sender.tag != 11 && sender.tag != 16
+        if sender.tag != 11 && sender.tag != 16 && sender.tag != 17
         {
             previousNumber = Double(display.text!)!
             
@@ -74,30 +75,42 @@ class ViewController: UIViewController {
             {
                 display.text = String(previousNumber + numberOnScreen)
                 result = Double(previousNumber + numberOnScreen)
+                numberOnScreen = Double(previousNumber + numberOnScreen)
             }
             else if operation == 13 /* Subtraction */
             {
                 display.text = String(previousNumber - numberOnScreen)
                 result = Double(previousNumber - numberOnScreen)
+                numberOnScreen = Double(previousNumber - numberOnScreen)
             }
             else if operation == 14 /* Multiplication */
             {
                 display.text = String(previousNumber * numberOnScreen)
                 result = Double(previousNumber * numberOnScreen)
+                numberOnScreen = Double(previousNumber * numberOnScreen)
             }
             else if operation == 15 /* Division */
             {
                 display.text = String(previousNumber / numberOnScreen)
                 result = Double(previousNumber / numberOnScreen)
+                numberOnScreen = Double(previousNumber / numberOnScreen)
             }
         }
-        else if sender.tag == 11  /* Clearing the data on and off screen */
+        else if sender.tag == 11  /* Clearing the data on and the off screen */
         {
             display.text = "0"
             numberOnScreen = 0;
             previousNumber = 0;
             operation = 0;
             mathOperation = false;
+            result = 0;
+        }
+        else if sender.tag == 17 /* Displaying Negative Numbers */
+        {
+            if numberOnScreen > 0
+            {
+                display.text = String(numberOnScreen * mathSign)
+            }
         }
     }
     
