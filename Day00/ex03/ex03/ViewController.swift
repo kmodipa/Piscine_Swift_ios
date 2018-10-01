@@ -9,17 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
+    var numberOnScreen:Double = 0;
     @IBOutlet weak var display: UILabel!
-    @IBAction func numbers(_ sender: UIButton) {
-        display.text = String(sender.tag-1)
+    
+    /* The number keypad in one function */
+    @IBAction func numbers(_ sender: UIButton)
+    {
+        display.text = display.text! + String(sender.tag-1)
+        numberOnScreen = Double(display.text!)!
     }
+    
+    /* The function keypad in one function */
+    @IBAction func functionButtons(_ sender: UIButton)
+    {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning() { 
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
