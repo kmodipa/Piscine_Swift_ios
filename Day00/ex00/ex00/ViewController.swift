@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBAction func clickMeButton(_ sender: Any) {
+    @IBAction func clickMeButton(_ sender: UIButton) {
         print("Hello World !")
     }
     override func viewDidLoad() {
