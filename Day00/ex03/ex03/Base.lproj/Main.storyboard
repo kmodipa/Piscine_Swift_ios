@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="CCU-l8-iaf">
             <objects>
-                <viewController id="iFR-IY-gnA" customClass="ViewController" customModule="ex02" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iFR-IY-gnA" customClass="ViewController" customModule="ex03" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wMN-3v-GxX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -292,6 +292,9 @@
                                                                     <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                     <color key="titleShadowColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
+                                                                <connections>
+                                                                    <action selector="functionButtons:" destination="iFR-IY-gnA" eventType="touchUpInside" id="NhY-79-Atv"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                     </stackView>

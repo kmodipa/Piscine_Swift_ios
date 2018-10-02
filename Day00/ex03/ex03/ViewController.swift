@@ -16,7 +16,29 @@ class ViewController: UIViewController {
     var operation = 0;
     var result:Double = 0;
     var mathSign:Double = -1;
+    var temp:Double = 0;
     @IBOutlet weak var display: UILabel!
+    
+    /* func for dealing with chaining */
+    func compute(x:Double, y:Double, operation:String) -> Double {
+        if operation == "+"
+        {
+            return x + y
+        }
+        else if operation == "-"
+        {
+            return x - y
+        }
+        else if operation == "*"
+        {
+            return x * y
+        }
+        else if operation == "/"
+        {
+            return x / y
+        }
+        return 0;
+    }
     
     /* The number keypad in one function */
     @IBAction func numbers(_ sender: UIButton)
@@ -40,30 +62,59 @@ class ViewController: UIViewController {
             }
         }
         numberOnScreen = Double(display.text!)!
+        print("Numberonscreen = \(numberOnScreen)")
     }
     
     /* The function keypad in one function */
     @IBAction func functionButtons(_ sender: UIButton)
     {
-        if sender.tag != 11 && sender.tag != 16 && sender.tag != 17
+        if sender.tag != 11 && sender.tag != 16 && sender.tag != 17 /* operators */
         {
             previousNumber = Double(display.text!)!
             
             if sender.tag == 12 /* Addition */
             {
-                display.text = "+"
+                if operation > 0 {
+                    print("Prev Before \(temp)")
+                    print("Num Before \(numberOnScreen)")
+                    previousNumber = compute(x: temp, y: numberOnScreen, operation: "+")
+                    display.text = "+"
+                    print("PreviousNumber = \(previousNumber)")
+                }
+                else {
+                    display.text = "+"
+                    temp = previousNumber
+                }
             }
             else if sender.tag == 13 /* Subtraction */
             {
-                display.text = "-"
+                if operation > 0 {
+                    previousNumber = compute(x: temp, y: numberOnScreen, operation: "-")
+                }
+                else {
+                    display.text = "-"
+                    temp = previousNumber
+                }
             }
             else if sender.tag == 14 /* Multiplication */
             {
-                display.text = "x"
+                if operation > 0 {
+                    previousNumber = compute(x: temp, y: numberOnScreen, operation: "*")
+                }
+                else {
+                    display.text = "x"
+                    temp = previousNumber
+                }
             }
             else if sender.tag == 15 /* Division */
             {
-                display.text = "/"
+                if operation > 0 {
+                    previousNumber = compute(x: temp, y: numberOnScreen, operation: "/")
+                }
+                else {
+                    display.text = "/"
+                    temp = previousNumber
+                }
             }
             
             operation = sender.tag;
@@ -73,6 +124,8 @@ class ViewController: UIViewController {
         {
             if operation == 12 /* Addition */
             {
+                print("Prev Before \(previousNumber)")
+                print("Num Before \(numberOnScreen)")
                 display.text = String(previousNumber + numberOnScreen)
                 result = Double(previousNumber + numberOnScreen)
                 numberOnScreen = Double(previousNumber + numberOnScreen)
@@ -96,6 +149,14 @@ class ViewController: UIViewController {
                 numberOnScreen = Double(previousNumber / numberOnScreen)
             }
         }
+        else if sender.tag == 17 /* Displaying Negative Numbers */
+        {
+            print(mathSign)
+            if numberOnScreen > 0
+            {
+                display.text = String(numberOnScreen * mathSign)
+            }
+        }
         else if sender.tag == 11  /* Clearing the data on and the off screen */
         {
             display.text = "0"
@@ -104,13 +165,7 @@ class ViewController: UIViewController {
             operation = 0;
             mathOperation = false;
             result = 0;
-        }
-        else if sender.tag == 17 /* Displaying Negative Numbers */
-        {
-            if numberOnScreen > 0
-            {
-                display.text = String(numberOnScreen * mathSign)
-            }
+            print(mathSign)
         }
     }
     
