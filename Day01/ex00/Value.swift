@@ -1,6 +1,6 @@
 
 enum Value:Int {
-    case one = 1
+    case Ace = 1
     case two = 2
     case three = 3
     case four = 4
@@ -10,6 +10,9 @@ enum Value:Int {
     case eight = 8
     case nine = 9
     case ten = 10
+	case Jack = 11
+	case Queen = 12
+	case king = 13
 
-    static let allValues = [one, two, three, four, five, six, seven, eight, nine, ten]
+    static let allValues = [Ace, two, three, four, five, six, seven, eight, nine, ten, Jack, Queen, king]
 }
