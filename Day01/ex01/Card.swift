@@ -1,12 +1,12 @@
+import AppKit
 import Foundation
 
 class Card : NSObject {
-
-	var color: Color;
-	var value: Value;
+	var color: Color
+	var value: Value
 	override var description: String {
 		get {
-			return "\(color), \(value)"
+			return "Color:\(color), Value:\(value)"
 		}
 	}
 
@@ -17,7 +17,7 @@ class Card : NSObject {
 	}
 
 	/* Function Overriding */
-	override func isEqual(_ receiver: AnyObject?) -> Bool {
+	override func isEqual(_ receiver: Any?) -> Bool {
 		if let otherCardObject = receiver as? Card {
 			return (self.color == otherCardObject.color  && self.value == otherCardObject.value)
 		} else {
