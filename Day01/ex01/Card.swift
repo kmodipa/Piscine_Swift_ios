@@ -6,7 +6,7 @@ class Card : NSObject {
 	var value: Value
 	override var description: String {
 		get {
-			return "Color:\(color), Value:\(value)"
+			return "Color: \(color.rawValue), Value: \(value.rawValue)"
 		}
 	}
 
