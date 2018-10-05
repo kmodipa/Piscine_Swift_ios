@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-wp-4MC">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oin-wp-4MC">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KNk-Zd-v11">
@@ -29,18 +29,24 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="imageCell" reuseIdentifier="imageCell" id="GCi-er-cye" customClass="imageViewCellClass" customModule="Day03_APM" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="176" height="143"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="143"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="176" height="143"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="182" height="143"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-vX-HS3">
-                                                    <rect key="frame" x="0.0" y="0.0" width="176" height="143"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-vX-HS3">
+                                                    <rect key="frame" x="0.0" y="0.0" width="182" height="143"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="EMw-vX-HS3" secondAttribute="trailing" id="CtY-sB-uFv"/>
+                                            <constraint firstItem="EMw-vX-HS3" firstAttribute="leading" secondItem="GCi-er-cye" secondAttribute="leading" id="E3W-JD-6jC"/>
+                                            <constraint firstItem="EMw-vX-HS3" firstAttribute="top" secondItem="GCi-er-cye" secondAttribute="top" id="HCc-kg-i6q"/>
+                                            <constraint firstAttribute="bottom" secondItem="EMw-vX-HS3" secondAttribute="bottom" id="nXw-V7-ugh"/>
+                                        </constraints>
+                                        <size key="customSize" width="182" height="143"/>
                                         <connections>
                                             <outlet property="myImageView" destination="EMw-vX-HS3" id="Kx3-Ca-eov"/>
                                         </connections>
@@ -54,7 +60,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Oin-wp-4MC" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="08o-QN-VSt"/>
+                            <constraint firstItem="Oin-wp-4MC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5vf-Lk-C1t"/>
+                            <constraint firstItem="Oin-wp-4MC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="A13-L0-BJI"/>
                             <constraint firstItem="Oin-wp-4MC" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="OIF-50-LyG"/>
+                            <constraint firstItem="Oin-wp-4MC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="WtQ-hQ-Mf1"/>
                             <constraint firstItem="Oin-wp-4MC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="arg-q8-WaN"/>
                             <constraint firstItem="Oin-wp-4MC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="k4b-JL-Org"/>
                             <constraint firstItem="Oin-wp-4MC" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="oWG-Jd-HGU"/>
@@ -64,10 +74,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="Images" id="bQo-DV-xAt"/>
+                    <connections>
+                        <outlet property="myCollectionView" destination="Oin-wp-4MC" id="2Xb-dJ-Bg1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="409"/>
+            <point key="canvasLocation" x="968.79999999999995" y="408.84557721139436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="a89-FX-YI5">
