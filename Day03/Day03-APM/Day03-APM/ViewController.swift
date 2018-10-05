@@ -60,8 +60,12 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if let url = URL(string: ImageArray[indexPath.row])
         {
             do {
-                let imageData = try Data(contentsOf: url)
-                imageCell.myImageView.image = UIImage(data: imageData)
+                DispatchQueue.global().async {
+                    let imageData = try? Data(contentsOf: url)
+                    DispatchQueue.main.async {
+                        imageCell.myImageView.image = UIImage(data: imageData!)
+                    }
+                }
             }catch let err {
                 print("Error: \(err.localizedDescription)")
             }
