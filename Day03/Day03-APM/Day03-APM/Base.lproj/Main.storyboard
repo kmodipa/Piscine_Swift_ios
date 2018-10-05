@@ -38,6 +38,11 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EMw-vX-HS3">
                                                     <rect key="frame" x="0.0" y="0.0" width="182" height="143"/>
                                                 </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wUs-mY-98j">
+                                                    <rect key="frame" x="73" y="53" width="37" height="37"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="color" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                         </view>
                                         <constraints>
@@ -49,6 +54,7 @@
                                         <size key="customSize" width="182" height="143"/>
                                         <connections>
                                             <outlet property="myImageView" destination="EMw-vX-HS3" id="Kx3-Ca-eov"/>
+                                            <outlet property="spinner" destination="wUs-mY-98j" id="yY4-nm-Jne"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

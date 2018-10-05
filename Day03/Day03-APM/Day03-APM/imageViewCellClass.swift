@@ -10,5 +10,6 @@ import UIKit
 
 class imageViewCellClass: UICollectionViewCell {
     
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     @IBOutlet weak var myImageView: UIImageView!
 }

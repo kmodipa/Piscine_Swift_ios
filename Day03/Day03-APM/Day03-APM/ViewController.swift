@@ -60,6 +60,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if let url = URL(string: ImageArray[indexPath.row])
         {
             do {
+                imageCell.spinner.startAnimating()
                 DispatchQueue.global().async {
                     let imageData = try? Data(contentsOf: url)
                     DispatchQueue.main.async {
