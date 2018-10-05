@@ -42,6 +42,10 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         /* Connecting the new layout */
         myCollectionView.collectionViewLayout = layout
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        createAlert(title: "Error", message: "There was a problem with the image download")
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -77,6 +81,13 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
          return imageCell
     }
     
-//    private var image: UIImage? {}
+    func createAlert(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            
+            self.present(alert, animated: true, completion: nil)
+        }))
+    }
 }
 
