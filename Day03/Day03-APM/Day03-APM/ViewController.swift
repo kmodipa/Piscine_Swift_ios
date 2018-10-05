@@ -65,6 +65,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                     let imageData = try? Data(contentsOf: url)
                     DispatchQueue.main.async {
                         imageCell.myImageView.image = UIImage(data: imageData!)
+                        imageCell.spinner.stopAnimating()
                     }
                 }
             }catch let err {
@@ -75,5 +76,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
          return imageCell
     }
+    
+//    private var image: UIImage? {}
 }
 
