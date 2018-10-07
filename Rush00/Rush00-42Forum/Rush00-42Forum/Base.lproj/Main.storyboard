@@ -36,6 +36,16 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="h5S-eD-3uG" secondAttribute="bottom" id="5wd-Mh-41a"/>
+                                    <constraint firstItem="ggr-hb-ETA" firstAttribute="top" secondItem="9C6-2o-6e6" secondAttribute="top" id="RSr-05-bdF"/>
+                                    <constraint firstItem="h5S-eD-3uG" firstAttribute="top" secondItem="ggr-hb-ETA" secondAttribute="bottom" id="WmT-7y-4G5"/>
+                                    <constraint firstItem="h5S-eD-3uG" firstAttribute="leading" secondItem="9C6-2o-6e6" secondAttribute="leading" id="XQu-xR-f4W"/>
+                                    <constraint firstItem="h5S-eD-3uG" firstAttribute="top" secondItem="ggr-hb-ETA" secondAttribute="bottom" id="aed-yW-Jep"/>
+                                    <constraint firstAttribute="trailing" secondItem="h5S-eD-3uG" secondAttribute="trailing" id="oJX-lq-WAG"/>
+                                    <constraint firstItem="ggr-hb-ETA" firstAttribute="leading" secondItem="9C6-2o-6e6" secondAttribute="leading" id="qFI-Va-6ph"/>
+                                    <constraint firstAttribute="trailing" secondItem="ggr-hb-ETA" secondAttribute="trailing" id="rwJ-mb-q2m"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -35,8 +35,12 @@ class ViewController: UIViewController {
             
             if let data = data {
                 do {
-                    let json = try JSONSerialization.jsonObject(with: data, options: [])
-                    print(json)
+                    let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as! NSDictionary
+                    
+                    if let token = json["access_token"]
+                    {
+                        print(token)
+                    }
                 } catch {
                     print(error)
                 }
