@@ -37,13 +37,22 @@
                                     <action selector="changeMaptype:" destination="9pv-A4-QxB" eventType="valueChanged" id="0pu-ey-6Ho"/>
                                 </connections>
                             </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGs-Ty-bMh">
+                                <rect key="frame" x="316" y="571" width="40" height="40"/>
+                                <state key="normal" image="icons8-target-40"/>
+                                <connections>
+                                    <action selector="getUserLocation:" destination="9pv-A4-QxB" eventType="touchUpInside" id="H1m-hb-D1F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="mtS-pc-4Ge" firstAttribute="top" secondItem="tsR-hK-woN" secondAttribute="top" id="8s7-dY-JJM"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="bottom" secondItem="bGs-Ty-bMh" secondAttribute="bottom" constant="7" id="e2Y-fV-dx1"/>
                             <constraint firstItem="mtS-pc-4Ge" firstAttribute="trailing" secondItem="PQr-Ze-W5v" secondAttribute="trailing" id="mLp-1m-Uwy"/>
                             <constraint firstItem="mtS-pc-4Ge" firstAttribute="leading" secondItem="PQr-Ze-W5v" secondAttribute="leading" id="thR-zF-Ckz"/>
                             <constraint firstItem="mtS-pc-4Ge" firstAttribute="bottom" secondItem="PQr-Ze-W5v" secondAttribute="bottom" id="usv-1i-GOr"/>
+                            <constraint firstItem="PQr-Ze-W5v" firstAttribute="trailing" secondItem="bGs-Ty-bMh" secondAttribute="trailing" constant="19" id="yYt-zE-IZN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
@@ -144,5 +153,6 @@
         <image name="first" width="30" height="30"/>
         <image name="icons8-bulleted-list-40" width="40" height="40"/>
         <image name="icons8-map-marker-40" width="40" height="40"/>
+        <image name="icons8-target-40" width="40" height="40"/>
     </resources>
 </document>

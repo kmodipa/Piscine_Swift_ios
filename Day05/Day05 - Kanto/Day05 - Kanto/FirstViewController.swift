@@ -10,13 +10,21 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class FirstViewController: UIViewController, MKMapViewDelegate {
+class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var mapView: MKMapView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         /* Do any additional setup after loading the view, typically from a nib. */
+        
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.distanceFilter = 10
+//        locationManager.startUpdatingLocation()
         
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
@@ -26,6 +34,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         mapView.addAnnotation(placeAnnotation)
         mapView.setRegion(placeAnnotation.region, animated: true)
         
+    }
+    
+    /* Getting current user location */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        manager.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
@@ -49,6 +62,13 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
     @IBAction func changeMaptype(_ sender: UISegmentedControl) {
         mapView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
     }
+    
+    /* User location request */
+    @IBAction func getUserLocation(_ sender: UIButton) {
+        print(sender)
+    
+    }
+    
     
 }
 
