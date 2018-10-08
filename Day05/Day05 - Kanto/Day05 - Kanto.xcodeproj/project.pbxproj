@@ -13,6 +13,8 @@
 		ACD5624C216B45C2006A7D72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD5624A216B45C2006A7D72 /* Main.storyboard */; };
 		ACD5624E216B45CA006A7D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACD5624D216B45CA006A7D72 /* Assets.xcassets */; };
 		ACD56251216B45CA006A7D72 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACD5624F216B45CA006A7D72 /* LaunchScreen.storyboard */; };
+		ACD56259216B5FEC006A7D72 /* PlacesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD56258216B5FEC006A7D72 /* PlacesModel.swift */; };
+		ACD5625B216B813F006A7D72 /* placeAnnotationClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD5625A216B813F006A7D72 /* placeAnnotationClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ACD5624D216B45CA006A7D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACD56250216B45CA006A7D72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ACD56252216B45CA006A7D72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACD56258216B5FEC006A7D72 /* PlacesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesModel.swift; sourceTree = "<group>"; };
+		ACD5625A216B813F006A7D72 /* placeAnnotationClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = placeAnnotationClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				ACD5624D216B45CA006A7D72 /* Assets.xcassets */,
 				ACD5624F216B45CA006A7D72 /* LaunchScreen.storyboard */,
 				ACD56252216B45CA006A7D72 /* Info.plist */,
+				ACD56258216B5FEC006A7D72 /* PlacesModel.swift */,
+				ACD5625A216B813F006A7D72 /* placeAnnotationClass.swift */,
 			);
 			path = "Day05 - Kanto";
 			sourceTree = "<group>";
@@ -139,8 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACD56249216B45C2006A7D72 /* SecondViewController.swift in Sources */,
+				ACD56259216B5FEC006A7D72 /* PlacesModel.swift in Sources */,
 				ACD56245216B45C2006A7D72 /* AppDelegate.swift in Sources */,
 				ACD56247216B45C2006A7D72 /* FirstViewController.swift in Sources */,
+				ACD5625B216B813F006A7D72 /* placeAnnotationClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
