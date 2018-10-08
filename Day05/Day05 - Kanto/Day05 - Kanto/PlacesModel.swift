@@ -9,9 +9,9 @@
 import Foundation
 
 struct Places {
-    static let places_tuble : [(String, String)] = [
-        ("42", "Ecole trop style" ),
-        ("WeThinkCode_", "Eat.Sleep.Code"),
-        ("42 Silicon Valley", "Born To Code")
+    static let places_tuble : [(String, String, Double, Double)] = [
+        ("42", "Ecole trop style", 48.8966105,2.3163123),
+        ("WeThinkCode_", "Eat.Sleep.Code", -26.2048952,28.0379813),
+        ("42 Silicon Valley", "Born To Code", 37.5487452,-122.0614357)
     ]
 }

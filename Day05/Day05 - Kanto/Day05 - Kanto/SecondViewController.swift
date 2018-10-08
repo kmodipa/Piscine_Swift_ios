@@ -19,11 +19,11 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         /* getting the cell to work with */
-        let cell = tableView.dequeueReusableCell(withIdentifier: "tableCellIdentifier")
+        let cellView = tableView.dequeueReusableCell(withIdentifier: "tableCellIdentifier")
         /* Don't forget we are working with one row at a time */
-        cell?.textLabel?.text = Places.places_tuble[indexPath.row].0
+        cellView?.textLabel?.text = Places.places_tuble[indexPath.row].0
         
-        return cell!
+        return cellView!
     }
     
     override func viewDidLoad() {

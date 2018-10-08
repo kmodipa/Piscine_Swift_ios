@@ -23,4 +23,10 @@ class PlaceAnnotationClass: NSObject, MKAnnotation {
         
         super.init()
     }
+    
+    /* Make map zoom in on location */
+    var region: MKCoordinateRegion {
+        let span = MKCoordinateSpan(latitudeDelta: 0.001, longitudeDelta: 0.001)
+        return MKCoordinateRegion(center: coordinate, span: span)
+    }
 }
