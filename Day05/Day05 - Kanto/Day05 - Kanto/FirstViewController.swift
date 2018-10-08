@@ -33,7 +33,8 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
         if let placeAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView {
          placeAnnotationView.animatesWhenAdded = true
          placeAnnotationView.titleVisibility = .adaptive
@@ -43,5 +44,11 @@ class FirstViewController: UIViewController, MKMapViewDelegate {
         }
         return nil
     }
+    
+    /* Switching the map type */
+    @IBAction func changeMaptype(_ sender: UISegmentedControl) {
+        mapView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
+    }
+    
 }
 
