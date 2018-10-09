@@ -14,6 +14,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
 
     @IBOutlet weak var mapView: MKMapView!
     
+    let regionRadius: CLLocationDistance = 1000
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -22,8 +23,9 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.distanceFilter = 10
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+//        locationManager.distanceFilter = 10
+        locationManager.requestAlwaysAuthorization()
         locationManager.startUpdatingLocation()
         
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
@@ -38,7 +40,21 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     /* Getting current user location */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        manager.stopUpdatingLocation()
+        //Access the last object from locations to get perfect current location
+        if let location = locations.last {
+//            let span = MKCoordinateSpanMake(0.00575, 0.00575)
+            let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let placeAnnotation = PlaceAnnotationClass(coordinate: myLocation, title: "Home at weThinkCode", subtitle: "Home is where your code runs")
+//            let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
+            mapView.addAnnotation(placeAnnotation)
+//            let region = MKCoordinateRegionMake(myLocation, span)
+            mapView.setRegion(placeAnnotation.region, animated: true)
+        }
+        self.mapView.showsUserLocation = true
+        manager.stopUpdatingLocation()
+        /* Start here when the map starts */
+        let fourtyTwo = CLLocationCoordinate2D(latitude: 48.8966105, longitude: 2.3163123)
+        centerMapOnLocation(location: fourtyTwo)
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,15 +74,19 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         return nil
     }
     
+    func centerMapOnLocation(location: CLLocationCoordinate2D) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius, regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
+    }
+    
     /* Switching the map type */
     @IBAction func changeMaptype(_ sender: UISegmentedControl) {
         mapView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
     }
-    
+
     /* User location request */
     @IBAction func getUserLocation(_ sender: UIButton) {
-        print(sender)
-    
+        centerMapOnLocation(location: self.mapView.userLocation.coordinate)
     }
     
     

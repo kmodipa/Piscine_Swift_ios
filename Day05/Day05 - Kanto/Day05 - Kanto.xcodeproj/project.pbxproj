@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC27E6E8216CF5F50039BF87 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC27E6E7216CF5F40039BF87 /* CoreLocation.framework */; };
 		ACD56245216B45C2006A7D72 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD56244216B45C2006A7D72 /* AppDelegate.swift */; };
 		ACD56247216B45C2006A7D72 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD56246216B45C2006A7D72 /* FirstViewController.swift */; };
 		ACD56249216B45C2006A7D72 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD56248216B45C2006A7D72 /* SecondViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC27E6E7216CF5F40039BF87 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		ACD56241216B45C2006A7D72 /* Day05 - Kanto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day05 - Kanto.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACD56244216B45C2006A7D72 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ACD56246216B45C2006A7D72 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -35,17 +37,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC27E6E8216CF5F50039BF87 /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AC27E6E6216CF5F40039BF87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AC27E6E7216CF5F40039BF87 /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		ACD56238216B45C2006A7D72 = {
 			isa = PBXGroup;
 			children = (
 				ACD56243216B45C2006A7D72 /* Day05 - Kanto */,
 				ACD56242216B45C2006A7D72 /* Products */,
+				AC27E6E6216CF5F40039BF87 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
