@@ -26,6 +26,23 @@ class SecondViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cellView!
     }
     
+    /* EVENT: SELECTED CELL */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if let controllers = appDelegate.window?.rootViewController?.childViewControllers {
+            for controller in controllers {
+                if let mapController = controller as? MapViewController {
+                    mapController.placeLocation = Places.places_tuble(at: indexPath.row)
+                    self.tabBarController?.selectedIndex = 0
+                    break
+                }
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
