@@ -7,31 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACB6424A2165E32900FEB5B4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB642492165E32900FEB5B4 /* AppDelegate.swift */; };
-		ACB6424C2165E32900FEB5B4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6424B2165E32900FEB5B4 /* ViewController.swift */; };
-		ACB6424F2165E32900FEB5B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB6424D2165E32900FEB5B4 /* Main.storyboard */; };
-		ACB642512165E32E00FEB5B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACB642502165E32E00FEB5B4 /* Assets.xcassets */; };
-		ACB642542165E32E00FEB5B4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ACB642522165E32E00FEB5B4 /* LaunchScreen.storyboard */; };
-		ACB6425E21661DD300FEB5B4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6425D21661DD300FEB5B4 /* Model.swift */; };
-		ACB6426A216672D400FEB5B4 /* PersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB64269216672D400FEB5B4 /* PersonController.swift */; };
-		ACB6426C216676E400FEB5B4 /* PersonTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACB6426B216676E400FEB5B4 /* PersonTableView.swift */; };
+		AC104A992168A498008FE1FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC104A982168A498008FE1FE /* AppDelegate.swift */; };
+		AC104A9E2168A498008FE1FE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC104A9C2168A498008FE1FE /* Main.storyboard */; };
+		AC104AA02168A4A0008FE1FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC104A9F2168A4A0008FE1FE /* Assets.xcassets */; };
+		AC104AA32168A4A0008FE1FE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC104AA12168A4A0008FE1FE /* LaunchScreen.storyboard */; };
+		AC104AAC2168CEE3008FE1FE /* TweetsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC104AAB2168CEE3008FE1FE /* TweetsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		ACB642462165E32900FEB5B4 /* ex00.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ex00.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACB642492165E32900FEB5B4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		ACB6424B2165E32900FEB5B4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		ACB6424E2165E32900FEB5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		ACB642502165E32E00FEB5B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ACB642532165E32E00FEB5B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		ACB642552165E32E00FEB5B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		ACB6425D21661DD300FEB5B4 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		ACB64269216672D400FEB5B4 /* PersonController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonController.swift; sourceTree = "<group>"; };
-		ACB6426B216676E400FEB5B4 /* PersonTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableView.swift; sourceTree = "<group>"; };
+		AC104A952168A498008FE1FE /* Day04 - Tweets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Day04 - Tweets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC104A982168A498008FE1FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AC104A9D2168A498008FE1FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AC104A9F2168A4A0008FE1FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AC104AA22168A4A0008FE1FE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AC104AA42168A4A0008FE1FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC104AAB2168CEE3008FE1FE /* TweetsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		ACB642432165E32900FEB5B4 /* Frameworks */ = {
+		AC104A922168A498008FE1FE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,74 +35,79 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		ACB6423D2165E32800FEB5B4 = {
+		AC104A8C2168A498008FE1FE = {
 			isa = PBXGroup;
 			children = (
-				ACB642482165E32900FEB5B4 /* ex00 */,
-				ACB642472165E32900FEB5B4 /* Products */,
+				AC104A972168A498008FE1FE /* Day04 - Tweets */,
+				AC104A962168A498008FE1FE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		ACB642472165E32900FEB5B4 /* Products */ = {
+		AC104A962168A498008FE1FE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				ACB642462165E32900FEB5B4 /* ex00.app */,
+				AC104A952168A498008FE1FE /* Day04 - Tweets.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ACB642482165E32900FEB5B4 /* ex00 */ = {
+		AC104A972168A498008FE1FE /* Day04 - Tweets */ = {
 			isa = PBXGroup;
 			children = (
-				ACB642492165E32900FEB5B4 /* AppDelegate.swift */,
-				ACB6424B2165E32900FEB5B4 /* ViewController.swift */,
-				ACB6424D2165E32900FEB5B4 /* Main.storyboard */,
-				ACB642502165E32E00FEB5B4 /* Assets.xcassets */,
-				ACB642522165E32E00FEB5B4 /* LaunchScreen.storyboard */,
-				ACB642552165E32E00FEB5B4 /* Info.plist */,
-				ACB6425D21661DD300FEB5B4 /* Model.swift */,
-				ACB64269216672D400FEB5B4 /* PersonController.swift */,
-				ACB6426B216676E400FEB5B4 /* PersonTableView.swift */,
+				AC104A9C2168A498008FE1FE /* Main.storyboard */,
+				AC104AAB2168CEE3008FE1FE /* TweetsTableViewController.swift */,
+				AC104AA42168A4A0008FE1FE /* Info.plist */,
+				AC104AAA2168CE5A008FE1FE /* Supporting Files */,
 			);
-			path = ex00;
+			path = "Day04 - Tweets";
+			sourceTree = "<group>";
+		};
+		AC104AAA2168CE5A008FE1FE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AC104A982168A498008FE1FE /* AppDelegate.swift */,
+				AC104A9F2168A4A0008FE1FE /* Assets.xcassets */,
+				AC104AA12168A4A0008FE1FE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		ACB642452165E32900FEB5B4 /* ex00 */ = {
+		AC104A942168A498008FE1FE /* Day04 - Tweets */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = ACB642582165E32E00FEB5B4 /* Build configuration list for PBXNativeTarget "ex00" */;
+			buildConfigurationList = AC104AA72168A4A0008FE1FE /* Build configuration list for PBXNativeTarget "Day04 - Tweets" */;
 			buildPhases = (
-				ACB642422165E32900FEB5B4 /* Sources */,
-				ACB642432165E32900FEB5B4 /* Frameworks */,
-				ACB642442165E32900FEB5B4 /* Resources */,
+				AC104A912168A498008FE1FE /* Sources */,
+				AC104A922168A498008FE1FE /* Frameworks */,
+				AC104A932168A498008FE1FE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = ex00;
-			productName = ex00;
-			productReference = ACB642462165E32900FEB5B4 /* ex00.app */;
+			name = "Day04 - Tweets";
+			productName = "Day04 - Tweets";
+			productReference = AC104A952168A498008FE1FE /* Day04 - Tweets.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		ACB6423E2165E32800FEB5B4 /* Project object */ = {
+		AC104A8D2168A498008FE1FE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0940;
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = Khomotjo;
 				TargetAttributes = {
-					ACB642452165E32900FEB5B4 = {
+					AC104A942168A498008FE1FE = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
 				};
 			};
-			buildConfigurationList = ACB642412165E32800FEB5B4 /* Build configuration list for PBXProject "ex00" */;
+			buildConfigurationList = AC104A902168A498008FE1FE /* Build configuration list for PBXProject "Day04 - Tweets" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -116,57 +115,54 @@
 				en,
 				Base,
 			);
-			mainGroup = ACB6423D2165E32800FEB5B4;
-			productRefGroup = ACB642472165E32900FEB5B4 /* Products */;
+			mainGroup = AC104A8C2168A498008FE1FE;
+			productRefGroup = AC104A962168A498008FE1FE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				ACB642452165E32900FEB5B4 /* ex00 */,
+				AC104A942168A498008FE1FE /* Day04 - Tweets */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		ACB642442165E32900FEB5B4 /* Resources */ = {
+		AC104A932168A498008FE1FE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB642542165E32E00FEB5B4 /* LaunchScreen.storyboard in Resources */,
-				ACB642512165E32E00FEB5B4 /* Assets.xcassets in Resources */,
-				ACB6424F2165E32900FEB5B4 /* Main.storyboard in Resources */,
+				AC104AA32168A4A0008FE1FE /* LaunchScreen.storyboard in Resources */,
+				AC104AA02168A4A0008FE1FE /* Assets.xcassets in Resources */,
+				AC104A9E2168A498008FE1FE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		ACB642422165E32900FEB5B4 /* Sources */ = {
+		AC104A912168A498008FE1FE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACB6426A216672D400FEB5B4 /* PersonController.swift in Sources */,
-				ACB6426C216676E400FEB5B4 /* PersonTableView.swift in Sources */,
-				ACB6425E21661DD300FEB5B4 /* Model.swift in Sources */,
-				ACB6424C2165E32900FEB5B4 /* ViewController.swift in Sources */,
-				ACB6424A2165E32900FEB5B4 /* AppDelegate.swift in Sources */,
+				AC104A992168A498008FE1FE /* AppDelegate.swift in Sources */,
+				AC104AAC2168CEE3008FE1FE /* TweetsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		ACB6424D2165E32900FEB5B4 /* Main.storyboard */ = {
+		AC104A9C2168A498008FE1FE /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACB6424E2165E32900FEB5B4 /* Base */,
+				AC104A9D2168A498008FE1FE /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		ACB642522165E32E00FEB5B4 /* LaunchScreen.storyboard */ = {
+		AC104AA12168A4A0008FE1FE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				ACB642532165E32E00FEB5B4 /* Base */,
+				AC104AA22168A4A0008FE1FE /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -174,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		ACB642562165E32E00FEB5B4 /* Debug */ = {
+		AC104AA52168A4A0008FE1FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -234,7 +230,7 @@
 			};
 			name = Debug;
 		};
-		ACB642572165E32E00FEB5B4 /* Release */ = {
+		AC104AA62168A4A0008FE1FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -288,34 +284,34 @@
 			};
 			name = Release;
 		};
-		ACB642592165E32E00FEB5B4 /* Debug */ = {
+		AC104AA82168A4A0008FE1FE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ex00/Info.plist;
+				INFOPLIST_FILE = "Day04 - Tweets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kmodipa.ex00;
+				PRODUCT_BUNDLE_IDENTIFIER = "kmodipa.Day04---Tweets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		ACB6425A2165E32E00FEB5B4 /* Release */ = {
+		AC104AA92168A4A0008FE1FE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ex00/Info.plist;
+				INFOPLIST_FILE = "Day04 - Tweets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kmodipa.ex00;
+				PRODUCT_BUNDLE_IDENTIFIER = "kmodipa.Day04---Tweets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -325,25 +321,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		ACB642412165E32800FEB5B4 /* Build configuration list for PBXProject "ex00" */ = {
+		AC104A902168A498008FE1FE /* Build configuration list for PBXProject "Day04 - Tweets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACB642562165E32E00FEB5B4 /* Debug */,
-				ACB642572165E32E00FEB5B4 /* Release */,
+				AC104AA52168A4A0008FE1FE /* Debug */,
+				AC104AA62168A4A0008FE1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		ACB642582165E32E00FEB5B4 /* Build configuration list for PBXNativeTarget "ex00" */ = {
+		AC104AA72168A4A0008FE1FE /* Build configuration list for PBXNativeTarget "Day04 - Tweets" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ACB642592165E32E00FEB5B4 /* Debug */,
-				ACB6425A2165E32E00FEB5B4 /* Release */,
+				AC104AA82168A4A0008FE1FE /* Debug */,
+				AC104AA92168A4A0008FE1FE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = ACB6423E2165E32800FEB5B4 /* Project object */;
+	rootObject = AC104A8D2168A498008FE1FE /* Project object */;
 }

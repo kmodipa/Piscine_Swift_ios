@@ -22,6 +22,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "deathCell")
         cell?.textLabel?.text = Data.films[indexPath.row].0 /* Giving our textLabel some info */
         cell?.detailTextLabel?.text = String(Data.films[indexPath.row].1)
+        cell?.detailTextLabel?.text = String(Data.films[indexPath.row].2)
         return cell!
     }
     

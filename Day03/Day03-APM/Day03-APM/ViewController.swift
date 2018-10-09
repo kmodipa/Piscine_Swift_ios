@@ -19,7 +19,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         "http://s1.1zoom.me/b5457/460/Dogs_French_Bulldog_Colored_background_Glance_528929_3840x2160.jpg",
         "http://s1.1zoom.me/b6550/598/Dogs_French_Bulldog_Glance_532467_3840x2160.jpg",
         "http://s1.1zoom.me/b5957/459/Dogs_French_Bulldog_Puppy_Paws_529473_3840x2160.jpg",
-        "http://s1.1zoom.me/b5353/964/French_Bulldog_Dogs_Puppy_527703_3840x2160.jpg",
+        "http://s1.1zoom.me/b5353/964/French_Bulldog_Dogs_Puppy_527703_3840x2160",
     ]
     
     @IBOutlet weak var myCollectionView: UICollectionView!
@@ -81,6 +81,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
          return imageCell
     }
     
+    /* The Alert function */
     func createAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: { (action) in
