@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.distanceFilter = 10
-//        locationManager.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         
         mapView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
         
@@ -38,7 +38,7 @@ class FirstViewController: UIViewController, MKMapViewDelegate, CLLocationManage
     
     /* Getting current user location */
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        manager.stopUpdatingLocation()
+//        manager.stopUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
