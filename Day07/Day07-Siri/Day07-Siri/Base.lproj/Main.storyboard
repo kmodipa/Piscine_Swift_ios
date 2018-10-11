@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="TPB-VP-udt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="QXd-EY-Mh7">
+            <objects>
+                <viewController id="TPB-VP-udt" customClass="ViewController" customModule="Day07_Siri" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fpz-2T-hMH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JFH-hC-YTi">
+                                <rect key="frame" x="96" y="253.5" width="182" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ImX-uK-4He">
+                                <rect key="frame" x="96" y="225" width="182" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="55Z-7R-KHH">
+                                <rect key="frame" x="96" y="303" width="182" height="30"/>
+                                <state key="normal" title="Check Weather"/>
+                                <connections>
+                                    <action selector="responseButton:" destination="TPB-VP-udt" eventType="touchUpInside" id="fX9-wF-9Py"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JFH-hC-YTi" firstAttribute="leading" secondItem="iOb-hA-mHm" secondAttribute="leading" constant="96" id="5iq-fy-8AK"/>
+                            <constraint firstItem="iOb-hA-mHm" firstAttribute="trailing" secondItem="55Z-7R-KHH" secondAttribute="trailing" constant="97" id="H4Z-tA-5pC"/>
+                            <constraint firstItem="55Z-7R-KHH" firstAttribute="top" secondItem="JFH-hC-YTi" secondAttribute="bottom" constant="19.5" id="HAP-Oz-E6U"/>
+                            <constraint firstItem="iOb-hA-mHm" firstAttribute="trailing" secondItem="JFH-hC-YTi" secondAttribute="trailing" constant="97" id="UOQ-zq-BOh"/>
+                            <constraint firstItem="55Z-7R-KHH" firstAttribute="leading" secondItem="iOb-hA-mHm" secondAttribute="leading" constant="96" id="bxl-Rn-NTm"/>
+                            <constraint firstItem="iOb-hA-mHm" firstAttribute="trailing" secondItem="ImX-uK-4He" secondAttribute="trailing" constant="97" id="eak-QB-Z7Z"/>
+                            <constraint firstItem="iOb-hA-mHm" firstAttribute="bottom" secondItem="55Z-7R-KHH" secondAttribute="bottom" constant="334" id="fKL-Lh-cd1"/>
+                            <constraint firstItem="ImX-uK-4He" firstAttribute="leading" secondItem="iOb-hA-mHm" secondAttribute="leading" constant="96" id="mMW-Ou-l8M"/>
+                            <constraint firstItem="JFH-hC-YTi" firstAttribute="top" secondItem="ImX-uK-4He" secondAttribute="bottom" constant="8" id="pM0-ec-yj4"/>
+                            <constraint firstItem="ImX-uK-4He" firstAttribute="top" secondItem="iOb-hA-mHm" secondAttribute="top" constant="205" id="teZ-Pq-od4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="iOb-hA-mHm"/>
+                    </view>
+                    <connections>
+                        <outlet property="myLabel" destination="ImX-uK-4He" id="K9n-CN-hxB"/>
+                        <outlet property="myTextField" destination="JFH-hC-YTi" id="gsj-4r-TIg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tqw-2f-Myq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-279.19999999999999" y="-262.21889055472263"/>
+        </scene>
+    </scenes>
+</document>
