@@ -5,6 +5,9 @@
       location = "group:Article+CoreDataClass.swift">
    </FileRef>
    <FileRef
+      location = "group:ArticleManager.swift">
+   </FileRef>
+   <FileRef
       location = "group:Article+CoreDataProperties.swift">
    </FileRef>
    <FileRef
