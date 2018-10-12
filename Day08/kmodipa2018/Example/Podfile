@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'kmodipa2018_Example' do
+  pod 'kmodipa2018', :path => '../'
+
+  target 'kmodipa2018_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

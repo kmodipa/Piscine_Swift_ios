@@ -1,0 +1,6 @@
+framework module kmodipa2018 {
+  umbrella header "kmodipa2018-umbrella.h"
+
+  export *
+  module * { export * }
+}

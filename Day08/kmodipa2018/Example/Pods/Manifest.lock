@@ -1,0 +1,16 @@
+PODS:
+  - kmodipa2018 (0.1.0)
+
+DEPENDENCIES:
+  - kmodipa2018 (from `../`)
+
+EXTERNAL SOURCES:
+  kmodipa2018:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  kmodipa2018: 4883569353570096db6b7c06cda73efb450e63cb
+
+PODFILE CHECKSUM: 6295f704a6142f1a33df9cde37dd909a8eeb2f0e
+
+COCOAPODS: 1.5.3
