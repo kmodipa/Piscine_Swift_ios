@@ -13,6 +13,7 @@
 		AC4573502171E8B1003B5308 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC45734E2171E8B1003B5308 /* Main.storyboard */; };
 		AC4573522171E8CA003B5308 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC4573512171E8CA003B5308 /* Assets.xcassets */; };
 		AC4573552171E8CA003B5308 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC4573532171E8CA003B5308 /* LaunchScreen.storyboard */; };
+		ACC06960217353BB0084215F /* searchAndNavigateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC0695F217353BB0084215F /* searchAndNavigateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		AC4573512171E8CA003B5308 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC4573542171E8CA003B5308 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AC4573562171E8CB003B5308 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACC0695F217353BB0084215F /* searchAndNavigateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchAndNavigateViewController.swift; sourceTree = "<group>"; };
 		D2091EC8793CD9757DE3132D /* Pods-Rush01-Plan42-GPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rush01-Plan42-GPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rush01-Plan42-GPS/Pods-Rush01-Plan42-GPS.release.xcconfig"; sourceTree = "<group>"; };
 		F7458072E06F07BE91A74A98 /* Pods_Rush01_Plan42_GPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Rush01_Plan42_GPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -84,6 +86,7 @@
 				AC4573512171E8CA003B5308 /* Assets.xcassets */,
 				AC4573532171E8CA003B5308 /* LaunchScreen.storyboard */,
 				AC4573562171E8CB003B5308 /* Info.plist */,
+				ACC0695F217353BB0084215F /* searchAndNavigateViewController.swift */,
 			);
 			path = "Rush01-Plan42-GPS";
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACC06960217353BB0084215F /* searchAndNavigateViewController.swift in Sources */,
 				AC45734D2171E8B1003B5308 /* ViewController.swift in Sources */,
 				AC45734B2171E8B1003B5308 /* AppDelegate.swift in Sources */,
 			);

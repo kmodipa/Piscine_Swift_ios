@@ -11,6 +11,7 @@ import Mapbox
 import MapboxCoreNavigation
 import MapboxNavigation
 import MapboxDirections
+import MapKit
 
 class ViewController: UIViewController, MGLMapViewDelegate {
     
@@ -19,6 +20,12 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     var navigateButton: UIButton!
     var directionsRoute: Route?
     let disneyland = CLLocationCoordinate2D(latitude: -26.1472491, longitude: 28.0348387)
+//    let info = searchAndNavigateViewController().searchButton().latitude
+    
+    
+    /* TextFields */
+    
+    /* Labels */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,31 +34,34 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             DispatchQueue.main.async {
                 self.mapView = NavigationMapView(frame: self.view.bounds) /* Make mapView cover the entire screen */
                 self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-                self.view.addSubview(self.mapView)
+//                self.view.addSubview(self.mapView)
                 self.mapView.delegate = self
                 self.mapView.showsUserLocation = true
                 self.mapView.setUserTrackingMode(.follow, animated: true)
-                self.addButton()
+//                self.addButton()
             }
         }
         
         
     }
-    
-    func addButton() {
-        navigateButton = UIButton(frame: CGRect(x: (view.frame.width/2) - 100, y: view.frame.height - 75, width: 200, height: 50))
-        navigateButton.backgroundColor = .white
-        navigateButton.setTitle("Navigate", for: .normal)
-        navigateButton.setTitleColor(UIColor(red: 59/255, green: 178/255, blue: 208/255, alpha: 1), for: .normal)
-        navigateButton.titleLabel?.font = UIFont(name: "AvenicNext-DeniBold", size: 10)
-        navigateButton.layer.cornerRadius = 25
-        navigateButton.layer.shadowOffset = CGSize(width: 0, height: 10)
-        navigateButton.layer.shadowColor = UIColor.black.cgColor
-        navigateButton.layer.shadowRadius = 5
-        navigateButton.layer.shadowOpacity = 0.3
-        navigateButton.addTarget(self, action: #selector(navigateButtonWasPressed(_:)), for: .touchUpInside)
-        view.addSubview(navigateButton)
+    @IBAction func navigateButton(_ sender: UIButton) {
+        navigateButtonWasPressed(sender)
     }
+    
+//    func addButton() {
+//        navigateButton = UIButton(frame: CGRect(x: (view.frame.width/2) - 100, y: view.frame.height - 75, width: 200, height: 50))
+//        navigateButton.backgroundColor = .white
+//        navigateButton.setTitle("Navigate", for: .normal)
+//        navigateButton.setTitleColor(UIColor(red: 59/255, green: 178/255, blue: 208/255, alpha: 1), for: .normal)
+//        navigateButton.titleLabel?.font = UIFont(name: "AvenicNext-DeniBold", size: 10)
+//        navigateButton.layer.cornerRadius = 25
+//        navigateButton.layer.shadowOffset = CGSize(width: 0, height: 10)
+//        navigateButton.layer.shadowColor = UIColor.black.cgColor
+//        navigateButton.layer.shadowRadius = 5
+//        navigateButton.layer.shadowOpacity = 0.3
+//        navigateButton.addTarget(self, action: #selector(navigateButtonWasPressed(_:)), for: .touchUpInside)
+//        view.addSubview(navigateButton)
+//    }
     
     @objc func navigateButtonWasPressed(_ sender: UIButton) {
         mapView.setUserTrackingMode(.none, animated: true)
@@ -90,13 +100,16 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         
         _ = Directions.shared.calculate(options, completionHandler: { (waypoints, routes, error) in
             self.directionsRoute = routes?.first
+            let navigationViewController = NavigationViewController(for: self.directionsRoute!)
+            self.present(navigationViewController, animated: true, completion: nil)
             /* Draw Route here */
-            self.drawRoute(route: self.directionsRoute!)
+//            self.drawRoute(route: self.directionsRoute!)
             
-            let coordinatesBounds = MGLCoordinateBounds(sw: destinationCor, ne: originCor)
-            let insets = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-            let routeCam = self.mapView.cameraThatFitsCoordinateBounds(coordinatesBounds, edgePadding: insets)
-            self.mapView.setCamera(routeCam, animated: true)
+//            let coordinatesBounds = MGLCoordinateBounds(sw: destinationCor, ne: originCor)
+//            let insets = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
+//            let routeCam = self.mapView.cameraThatFitsCoordinateBounds(coordinatesBounds, edgePadding: insets)
+            
+//            self.mapView.setCamera(routeCam, animated: true)
         })
         
     }
@@ -123,7 +136,6 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             mapView.style?.addLayer(lineStyle)
         }
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
