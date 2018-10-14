@@ -20,6 +20,9 @@
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="OE5-4W-Eze">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="toi-pZ-Vtx"/>
+                                </connections>
                             </mapView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="irz-62-pX6">
                                 <rect key="frame" x="309" y="73" width="49" height="59"/>
@@ -101,7 +104,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="GPS" id="ufA-2Z-w1B"/>
+                    <navigationItem key="navigationItem" title="GPS" id="ufA-2Z-w1B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="a5S-sP-ECM">
+                            <connections>
+                                <action selector="searchButton:" destination="BYZ-38-t0r" id="RSA-DY-Eni"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="destinationTextField" destination="oFB-C1-Kj5" id="Izm-bn-cCh"/>
                         <outlet property="mapKitView" destination="OE5-4W-Eze" id="ele-pA-vY1"/>

@@ -14,7 +14,7 @@ import MapboxDirections
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UISearchBarDelegate {
     
     /* Properties */
     var mapBoxView: NavigationMapView! /* MapBox */
@@ -113,14 +113,6 @@ class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, C
             self.directionsRoute = routes?.first
             let navigationViewController = NavigationViewController(for: self.directionsRoute!)
             self.present(navigationViewController, animated: true, completion: nil)
-            /* Draw Route here */
-//            self.drawRoute(route: self.directionsRoute!)
-            
-//            let coordinatesBounds = MGLCoordinateBounds(sw: destinationCor, ne: originCor)
-//            let insets = UIEdgeInsets(top: 50, left: 50, bottom: 50, right: 50)
-//            let routeCam = self.mapView.cameraThatFitsCoordinateBounds(coordinatesBounds, edgePadding: insets)
-            
-//            self.mapView.setCamera(routeCam, animated: true)
         })
         
     }
@@ -152,12 +144,9 @@ class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, C
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         //Access the last object from locations to get perfect current location
         if let location = locations.last {
-            //            let span = MKCoordinateSpanMake(0.00575, 0.00575)
             let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
             let placeAnnotation = PlaceAnnotationClass(coordinate: myLocation, title: "Home at weThinkCode", subtitle: "Home is where your code runs")
-            //            let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
             mapKitView.addAnnotation(placeAnnotation)
-            //            let region = MKCoordinateRegionMake(myLocation, span)
             mapKitView.setRegion(placeAnnotation.region, animated: true)
         }
         self.mapKitView.showsUserLocation = true
@@ -166,6 +155,76 @@ class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, C
         let fourtyTwo = CLLocationCoordinate2D(latitude: 48.8966105, longitude: 2.3163123)
         centerMapOnLocation(location: fourtyTwo)
     }
+    
+    /* Search handler */
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        //Ignoring user
+        UIApplication.shared.beginIgnoringInteractionEvents()
+        
+        //Activity Indicator
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
+        activityIndicator.center = self.view.center
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.stopAnimating()
+        
+        self.view.addSubview(activityIndicator)
+        
+        
+        //Hide search bar
+        searchBar.resignFirstResponder()
+        dismiss(animated: true, completion: nil)
+        
+        //Create the search result
+        let searchRequest = MKLocalSearchRequest()
+        searchRequest.naturalLanguageQuery = searchBar.text
+        
+        let  activeSearch = MKLocalSearch(request: searchRequest)
+        
+        activeSearch.start { (response, error) in
+            
+            activityIndicator.stopAnimating()
+            UIApplication.shared.endIgnoringInteractionEvents()
+            
+            if response == nil
+            {
+                print("ERROR")
+            }
+            else
+            {
+                //Remove annotations
+                let annotations = self.mapKitView.annotations
+                self.mapKitView.removeAnnotations(annotations)
+                
+                //Getting data
+                let latitude = response?.boundingRegion.center.latitude
+                let longitude = response?.boundingRegion.center.longitude
+                
+                //create annotation
+                let annotation = MKPointAnnotation()
+                annotation.title = searchBar.text
+                annotation.coordinate = CLLocationCoordinate2DMake(latitude!, longitude!)
+                self.mapKitView.addAnnotation(annotation)
+                
+                //Zooming in on annotation
+                let coordinate:CLLocationCoordinate2D = CLLocationCoordinate2DMake(latitude!, longitude!)
+                let span = MKCoordinateSpanMake(0.1, 0.1)
+                let region = MKCoordinateRegionMake(coordinate, span)
+                self.mapKitView.setRegion(region, animated: true)
+                
+            }
+        }
+        
+        
+    }
+    
+    /* Search Button */
+    @IBAction func searchButton(_ sender: UIBarButtonItem) {
+        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
+    }
+    
     
     @nonobjc func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
     {
