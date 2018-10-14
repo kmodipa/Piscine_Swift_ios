@@ -70,6 +70,18 @@
                                     <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="dtH-Pp-esz"/>
                                 </connections>
                             </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i83-2B-7vW">
+                                <rect key="frame" x="16" y="582" width="287" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Ey-51-sDl">
+                                <rect key="frame" x="311" y="561" width="49" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMinY="YES"/>
+                                <state key="normal" image="icons8-search-filled-50"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="0.5"/>
@@ -224,6 +236,7 @@
     </scenes>
     <resources>
         <image name="icons8-route-filled-50" width="50" height="50"/>
+        <image name="icons8-search-filled-50" width="50" height="50"/>
         <image name="icons8-target-50" width="30" height="30"/>
     </resources>
 </document>

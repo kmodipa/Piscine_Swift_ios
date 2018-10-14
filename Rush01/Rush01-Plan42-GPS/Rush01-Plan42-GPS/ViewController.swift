@@ -24,7 +24,6 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     let disneyland = CLLocationCoordinate2D(latitude: -26.1472491, longitude: 28.0348387)
 //    let info = searchAndNavigateViewController().searchButton().latitude
     
-    
     /* TextFields */
     
     /* Labels */
