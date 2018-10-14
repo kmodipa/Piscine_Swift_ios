@@ -60,11 +60,15 @@
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="8WD-TQ-4dC">
                                 <rect key="frame" x="16" y="619" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <segments>
                                     <segment title="Standard"/>
                                     <segment title="Satelite"/>
                                     <segment title="Hybrid"/>
                                 </segments>
+                                <connections>
+                                    <action selector="changeMap:" destination="BYZ-38-t0r" eventType="valueChanged" id="dtH-Pp-esz"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -81,6 +85,9 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="icons8-target-50" landscapeImage="icons8-target-50" style="plain" id="90w-Wn-6on"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="search" id="HFi-dl-VJN"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapKitView" destination="OE5-4W-Eze" id="ele-pA-vY1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

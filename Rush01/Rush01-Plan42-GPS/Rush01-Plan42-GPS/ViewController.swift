@@ -19,6 +19,8 @@ class ViewController: UIViewController, MGLMapViewDelegate {
     var mapView: NavigationMapView!
     var navigateButton: UIButton!
     var directionsRoute: Route?
+    @IBOutlet weak var mapKitView: MKMapView!
+    
     let disneyland = CLLocationCoordinate2D(latitude: -26.1472491, longitude: 28.0348387)
 //    let info = searchAndNavigateViewController().searchButton().latitude
     
@@ -135,6 +137,11 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             mapView.style?.addSource(source)
             mapView.style?.addLayer(lineStyle)
         }
+    }
+    
+    /* Switching the map type */
+    @IBAction func changeMap(_ sender: UISegmentedControl) {
+         mapKitView.mapType = MKMapType.init(rawValue: UInt(sender.selectedSegmentIndex)) ?? .standard
     }
     
     override func didReceiveMemoryWarning() {
