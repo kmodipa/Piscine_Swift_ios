@@ -12,19 +12,26 @@ import MapboxCoreNavigation
 import MapboxNavigation
 import MapboxDirections
 import MapKit
+import CoreLocation
 
-class ViewController: UIViewController, MGLMapViewDelegate {
+class ViewController: UIViewController, MGLMapViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
     
     /* Properties */
-    var mapView: NavigationMapView!
+    var mapBoxView: NavigationMapView! /* MapBox */
     var navigateButton: UIButton!
     var directionsRoute: Route?
-    @IBOutlet weak var mapKitView: MKMapView!
+    @IBOutlet weak var mapKitView: MKMapView! /* Mapkit */
+    
+    let regionRadius: CLLocationDistance = 1000
+    let locationManager = CLLocationManager()
     
     let disneyland = CLLocationCoordinate2D(latitude: -26.1472491, longitude: 28.0348387)
 //    let info = searchAndNavigateViewController().searchButton().latitude
     
     /* TextFields */
+    @IBOutlet weak var originTextField: UITextField!
+    @IBOutlet weak var destinationTextField: UITextField!
+    @IBOutlet weak var searchTextField: UITextField!
     
     /* Labels */
     
@@ -33,47 +40,50 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         DispatchQueue.global().async { /* Enabling Multithreding */
             DispatchQueue.main.async {
-                self.mapView = NavigationMapView(frame: self.view.bounds) /* Make mapView cover the entire screen */
-                self.mapView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+                self.mapBoxView = NavigationMapView(frame: self.view.bounds) /* Make mapView cover the entire screen */
+                self.mapBoxView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 //                self.view.addSubview(self.mapView)
-                self.mapView.delegate = self
-                self.mapView.showsUserLocation = true
-                self.mapView.setUserTrackingMode(.follow, animated: true)
+                self.mapBoxView.delegate = self
+                self.mapBoxView.showsUserLocation = true
+                self.mapBoxView.setUserTrackingMode(.follow, animated: true)
+                
+                /* MapKit Stuff */
+                self.locationManager.requestWhenInUseAuthorization()
+                self.locationManager.delegate = self
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+                //        locationManager.distanceFilter = 10
+                self.locationManager.requestAlwaysAuthorization()
+                self.locationManager.startUpdatingLocation()
+                
+                self.mapKitView.register(MKMarkerAnnotationView.self, forAnnotationViewWithReuseIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier)
+                
+                let placeCoordinates = CLLocationCoordinate2D(latitude: 48.8966105, longitude: 2.3163123)
+                let placeAnnotation = PlaceAnnotationClass(coordinate: placeCoordinates, title: "42", subtitle: "Ecole trop style")
+                
+                self.mapKitView.addAnnotation(placeAnnotation)
+                self.mapKitView.setRegion(placeAnnotation.region, animated: true)
 //                self.addButton()
             }
         }
         
         
     }
+    
+    /* The Navigation Button */
     @IBAction func navigateButton(_ sender: UIButton) {
         navigateButtonWasPressed(sender)
     }
     
-//    func addButton() {
-//        navigateButton = UIButton(frame: CGRect(x: (view.frame.width/2) - 100, y: view.frame.height - 75, width: 200, height: 50))
-//        navigateButton.backgroundColor = .white
-//        navigateButton.setTitle("Navigate", for: .normal)
-//        navigateButton.setTitleColor(UIColor(red: 59/255, green: 178/255, blue: 208/255, alpha: 1), for: .normal)
-//        navigateButton.titleLabel?.font = UIFont(name: "AvenicNext-DeniBold", size: 10)
-//        navigateButton.layer.cornerRadius = 25
-//        navigateButton.layer.shadowOffset = CGSize(width: 0, height: 10)
-//        navigateButton.layer.shadowColor = UIColor.black.cgColor
-//        navigateButton.layer.shadowRadius = 5
-//        navigateButton.layer.shadowOpacity = 0.3
-//        navigateButton.addTarget(self, action: #selector(navigateButtonWasPressed(_:)), for: .touchUpInside)
-//        view.addSubview(navigateButton)
-//    }
-    
     @objc func navigateButtonWasPressed(_ sender: UIButton) {
-        mapView.setUserTrackingMode(.none, animated: true)
+        mapBoxView.setUserTrackingMode(.none, animated: true)
         
         /* Adding Annotation */
         let annotation = MGLPointAnnotation()
         annotation.coordinate = disneyland
         annotation.title = "Start navigation"
-        mapView.addAnnotation(annotation)
+        mapBoxView.addAnnotation(annotation)
         
-        calculateRoute(from: (mapView.userLocation!.coordinate), to: disneyland) { (route, error) in
+        calculateRoute(from: (mapBoxView.userLocation!.coordinate), to: disneyland) { (route, error) in
             if error != nil
             {
                 print("error setting route")
@@ -122,7 +132,7 @@ class ViewController: UIViewController, MGLMapViewDelegate {
         let polyline = MGLPolylineFeature(coordinates: &routeCoordinates, count: route.coordinateCount)
         
         // If there's already a route line on the map, reset its shape to the new route
-        if let source = mapView.style?.source(withIdentifier: "route-source") as? MGLShapeSource {
+        if let source = mapBoxView.style?.source(withIdentifier: "route-source") as? MGLShapeSource {
             source.shape = polyline
         } else {
             let source = MGLShapeSource(identifier: "route-source", features: [polyline], options: nil)
@@ -133,9 +143,49 @@ class ViewController: UIViewController, MGLMapViewDelegate {
             lineStyle.lineWidth = NSExpression(forConstantValue: 3)
             
             // Add the source and style layer of the route line to the map
-            mapView.style?.addSource(source)
-            mapView.style?.addLayer(lineStyle)
+            mapBoxView.style?.addSource(source)
+            mapBoxView.style?.addLayer(lineStyle)
         }
+    }
+    
+    /* Getting current user location */
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //Access the last object from locations to get perfect current location
+        if let location = locations.last {
+            //            let span = MKCoordinateSpanMake(0.00575, 0.00575)
+            let myLocation = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let placeAnnotation = PlaceAnnotationClass(coordinate: myLocation, title: "Home at weThinkCode", subtitle: "Home is where your code runs")
+            //            let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude,location.coordinate.longitude)
+            mapKitView.addAnnotation(placeAnnotation)
+            //            let region = MKCoordinateRegionMake(myLocation, span)
+            mapKitView.setRegion(placeAnnotation.region, animated: true)
+        }
+        self.mapKitView.showsUserLocation = true
+        manager.stopUpdatingLocation()
+        /* Start here when the map starts */
+        let fourtyTwo = CLLocationCoordinate2D(latitude: 48.8966105, longitude: 2.3163123)
+        centerMapOnLocation(location: fourtyTwo)
+    }
+    
+    @nonobjc func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView?
+    {
+        if let placeAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: MKMapViewDefaultAnnotationViewReuseIdentifier) as? MKMarkerAnnotationView {
+            placeAnnotationView.animatesWhenAdded = true
+            placeAnnotationView.titleVisibility = .adaptive
+            
+            
+            return placeAnnotationView
+        }
+        return nil
+    }
+    
+    func centerMapOnLocation(location: CLLocationCoordinate2D) {
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location, regionRadius, regionRadius)
+        mapKitView.setRegion(coordinateRegion, animated: true)
+    }
+    
+    @IBAction func getUserLocation(_ sender: UIButton) {
+        centerMapOnLocation(location: self.mapKitView.userLocation.coordinate)
     }
     
     /* Switching the map type */
